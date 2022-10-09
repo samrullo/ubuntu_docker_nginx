@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  subuntu:
+    container_name: "subuntu"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/var/data
+    ports:
+      - 3000:80
+    command: ["systemctl","start","mysimplewsgi"]

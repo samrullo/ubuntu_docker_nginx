@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI occasion to serve myproject
+After=community.goal
+
+[Service]
+Person=root
+Group=www-data
+WorkingDirectory=/var/data/mysimplewsgi
+Surroundings="PATH=/var/data/mysimplewsgi/venv/bin"
+ExecStart=/var/data/mysimplewsgi/venv/bin/uwsgi --ini mysimplewsgi.ini
+
+[Install]
+WantedBy=multi-user.goal
